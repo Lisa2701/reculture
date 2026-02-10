@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReCulture</title>
 
+    <!-- model-viewer wieder eingebunden -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <style>
       body {
         background-color: #eeeeee;
@@ -17,9 +20,8 @@
         padding: 40px 0;
       }
 
-      /* 🔼 Überschrift größer gemacht */
       h1 {
-        font-size: 26pt; /* vorher 18pt */
+        font-size: 26pt;
         margin: 0;
       }
 
@@ -29,19 +31,33 @@
         margin: 8px 0 30px 0;
       }
 
-      /* 🔽 Kästen untereinander statt nebeneinander */
       .content {
         display: flex;
-        flex-direction: column; /* geändert */
+        flex-direction: column;
         gap: 20px;
         width: 80%;
         max-width: 900px;
       }
 
+      /* Kasten für Modelle */
       .model-box {
         background-color: white;
         padding: 20px;
-        min-height: 200px;
+      }
+
+      /* 🔹 Grid für mehrere kleine Modelle */
+      .model-grid {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      /* 🔹 einzelne kleine Modelle */
+      model-viewer {
+        width: 120px;
+        height: 120px;
+        background-color: transparent;
       }
 
       .text-box {
@@ -59,10 +75,44 @@
 
     <div class="content">
 
+      <!-- 🔹 Kasten mit mehreren 3D-Modellen -->
       <div class="model-box">
-        <p style="color: #888;">3D-Modelle</p>
+        <div class="model-grid">
+
+          <model-viewer
+            src="modell1.glb"
+            camera-controls
+            auto-rotate
+            rotation-per-second="20deg"
+            interaction-prompt="none"
+            disable-zoom
+            environment-image="neutral">
+          </model-viewer>
+
+          <model-viewer
+            src="modell2.glb"
+            camera-controls
+            auto-rotate
+            rotation-per-second="20deg"
+            interaction-prompt="none"
+            disable-zoom
+            environment-image="neutral">
+          </model-viewer>
+
+          <model-viewer
+            src="modell3.glb"
+            camera-controls
+            auto-rotate
+            rotation-per-second="20deg"
+            interaction-prompt="none"
+            disable-zoom
+            environment-image="neutral">
+          </model-viewer>
+
+        </div>
       </div>
 
+      <!-- Textkasten -->
       <div class="text-box">
         <p>
           ReCulture ist ein Projekt, das auf frei zugänglichen 3D-Scans und digitalen
