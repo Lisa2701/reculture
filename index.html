@@ -6,9 +6,8 @@
     <title>ReCulture</title>
 
     <style>
-      /* 1️⃣ Seitenhintergrund geändert */
       body {
-        background-color: #eeeeee; /* hellgrau */
+        background-color: #eeeeee;
         color: black;
         display: flex;
         flex-direction: column;
@@ -18,38 +17,34 @@
         padding: 40px 0;
       }
 
-      /* 2️⃣ Überschrift */
+      /* 🔼 Überschrift größer gemacht */
       h1 {
-        font-size: 18pt; /* gewünschte Größe */
+        font-size: 26pt; /* vorher 18pt */
         margin: 0;
       }
 
-      /* 3️⃣ Unterüberschrift */
       h2 {
         font-size: 11pt;
         font-weight: normal;
         margin: 8px 0 30px 0;
       }
 
-      /* 4️⃣ Container für die zwei weißen Kästen */
+      /* 🔽 Kästen untereinander statt nebeneinander */
       .content {
         display: flex;
+        flex-direction: column; /* geändert */
         gap: 20px;
         width: 80%;
         max-width: 900px;
       }
 
-      /* 5️⃣ Weißer Kasten links (3D-Modelle) */
       .model-box {
-        flex: 1;
         background-color: white;
         padding: 20px;
-        min-height: 300px;
+        min-height: 200px;
       }
 
-      /* 6️⃣ Weißer Kasten rechts (Text) */
       .text-box {
-        flex: 1;
         background-color: white;
         padding: 20px;
         box-sizing: border-box;
@@ -59,22 +54,15 @@
 
   <body>
 
-    <!-- Überschrift -->
     <h1>ReCulture</h1>
-
-    <!-- Unterüberschrift -->
     <h2>Kultur reproduzieren, recyceln und reaktivieren</h2>
 
-    <!-- Zwei weiße Kästen -->
     <div class="content">
 
-      <!-- Links: Platzhalter für 3D-Modelle -->
       <div class="model-box">
-        <!-- Hier können später mehrere kleine 3D-Modelle rein -->
         <p style="color: #888;">3D-Modelle</p>
       </div>
 
-      <!-- Rechts: Text -->
       <div class="text-box">
         <p>
           ReCulture ist ein Projekt, das auf frei zugänglichen 3D-Scans und digitalen
